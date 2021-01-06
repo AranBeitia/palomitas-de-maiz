@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelicula detalle</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/movie.css">
+
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/e49c509aec.js" crossorigin="anonymous"></script>
+  <script src="./js/movie.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./img/logo.png" width="30" height="30" alt="peliculas">
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">home</a>
+          </li>
+          <li class="nav-item">
+            <a href="./now-playing.html" class="nav-link">ultimos lanzamientos</a>
+          </li>
+          <li class="nav-item">
+            <a href="./popular.html" class="nav-link">populares</a>
+          </li>
+          <li class="nav-item">
+            <a href="./search.html" class="nav-link">buscador</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid movie-detail">
+    <div class="bg-color">
+      <div class="container">
+        <div class="row">
+          <div class="col-5 movie-detail__poster"></div>
+          <div class="col-7 movie-description"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="video-trailer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
