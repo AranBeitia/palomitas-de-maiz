@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
-    <h1>holiiii</h1>
+  <div>
+    <h1>now playing</h1>
   </div>
 </template>

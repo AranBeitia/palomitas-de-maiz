@@ -1,22 +1,22 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <router-link :to="{ name: 'Home' }" class="navbar-brand">
         <img src="@/ui/assets/img/logo.png" width="30" height="30" alt="peliculas">
-      </a>
+      </router-link>>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="./index.html" class="nav-link active">home</a>
+            <router-link :to="{ name: 'Home' }" class="nav-link">home</router-link>
           </li>
           <li class="nav-item">
             <router-link :to="{ name: 'NowPlaying' }" class="nav-link">ultimos lanzamientos</router-link>
           </li>
           <li class="nav-item">
-            <a href="./popular.html" class="nav-link">populares</a>
+            <router-link :to="{ name: 'Popular' }" class="nav-link">populares</router-link>
           </li>
           <li class="nav-item">
-            <a href="./search.html" class="nav-link">buscador</a>
+            <router-link :to="{ name: 'Search' }" class="nav-link">buscador</router-link>
           </li>
         </ul>
       </div>
