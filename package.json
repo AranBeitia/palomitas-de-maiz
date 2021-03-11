@@ -1,7 +1,12 @@
 {
+  "author": "Arantza Beitia",
   "name": "palomitas-de-maiz",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AranBeitia/palomitas-de-maiz.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
