@@ -1,18 +1,16 @@
 <template>
   <div class="home">
-    <h1>home</h1>
-    <img alt="Vue logo" src="@/ui/assets/img/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Carousel />
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/ui/components/HelloWorld.vue'
+import Carousel from '@/ui/components/Carousel.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Carousel
   }
 }
 </script>

@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <router-link :to="{ name: 'Home' }" class="navbar-brand">
         <img src="@/ui/assets/img/logo.png" width="30" height="30" alt="peliculas">
-      </router-link>>
+      </router-link>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
