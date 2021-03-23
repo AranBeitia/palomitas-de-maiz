@@ -8,10 +8,10 @@
 
 <script>
 import TheTopNav from '@/ui/views/nav/TheTopNav.vue'
-import axios from 'axios'
+// import axios from 'axios'
 
-const URL_PATH = 'https://api.themoviedb.org'
-const API_KEY = 'c6163ef75c8e34a1d6c622ff9958833e'
+// const URL_PATH = 'https://api.themoviedb.org'
+// const API_KEY = 'c6163ef75c8e34a1d6c622ff9958833e'
 export default {
   name: 'App',
   components: {
@@ -21,10 +21,10 @@ export default {
     return { result:null }
   },
   created() {
-    axios.get(`${URL_PATH}/3/movie/1?api_key=${API_KEY}&language=es-ES`)
-    .then((result) => {
-      this.result = result.data;
-    })
+    // axios.get(`${URL_PATH}/3/movie/1?api_key=${API_KEY}&language=es-ES`)
+    // .then((result) => {
+    //   this.result = result.data;
+    // })
   }
 
 //   const getMovies = (type) => {
@@ -47,8 +47,6 @@ export default {
 }
 
 #nav {
-  padding: 30px;
-
   a{
     font-weight: bold;
 

@@ -7,8 +7,7 @@
       controls
       indicators
       background="#ababab"
-      img-width="1024"
-      img-height="480"
+      img-width="100%"
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
@@ -17,16 +16,16 @@
       <b-carousel-slide
         caption="First slide"
         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-        img-src="https://picsum.photos/1024/480/?image=52"
+        img-src="https://image.tmdb.org/t/p/original/vfuzELmhBjBTswXj2Vqxnu5ge4g.jpg"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
+      <b-carousel-slide img-src="https://image.tmdb.org/t/p/original/fX8e94MEWSuTJExndVYxKsmA4Hw.jpg">
         <h1>Hello world!</h1>
       </b-carousel-slide>
 
       <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
+      <b-carousel-slide img-src="https://image.tmdb.org/t/p/original/4qu4kO5HVTKMK2hvmCXeviZ233l.jpg"></b-carousel-slide>
 
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
@@ -34,27 +33,18 @@
         <template #img>
           <img
             class="d-block img-fluid w-100"
-            width="1024"
-            height="480"
-            src="https://picsum.photos/1024/480/?image=55"
+            width="100%"
+            src="https://image.tmdb.org/t/p/original/8tNX8s3j1O0eqilOQkuroRLyOZA.jpg"
             alt="image slot"
           >
         </template>
       </b-carousel-slide>
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-        </p>
-      </b-carousel-slide>
     </b-carousel>
 
-    <p class="mt-4">
+    <!-- <p class="mt-4">
       Slide #: {{ slide }}<br>
       Sliding: {{ sliding }}
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -66,13 +56,19 @@
         sliding: null
       }
     },
-    // methods: {
-    //   onSlideStart(slide) {
-    //     this.sliding = true
-    //   },
-    //   onSlideEnd(slide) {
-    //     this.sliding = false
-    //   }
-    // }
+    methods: {
+      onSlideStart() {
+        this.sliding = true
+      },
+      onSlideEnd() {
+        this.sliding = false
+      }
+    }
   }
 </script>
+
+<style>
+.carousel-item {
+  height: 40vh;
+}
+</style>
