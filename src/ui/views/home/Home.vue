@@ -5,6 +5,7 @@
       <section class="row">
         <article class="col-6">
           <h2>Más populares</h2>
+          <button @click="data">data</button>
           <b-list-group>
             <b-list-group-item :to="{ name: 'Movie' }">Awesome link</b-list-group-item>
             <b-list-group-item href="#" active>Link with active state</b-list-group-item>
@@ -28,10 +29,16 @@
 
 <script>
 import Carousel from '@/ui/components/Carousel'
+import Request from '@/ui/views/home/homeRequest.js'
 
 export default {
   components: {
     Carousel
+  },
+  methods: {
+    data () {
+      Request.data()
+    }
   }
 }
 </script>
