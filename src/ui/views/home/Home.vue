@@ -5,7 +5,8 @@
       <section class="row">
         <article class="col-6">
           <h2>Más populares</h2>
-          <button @click="data">data</button>
+          <button @click="getMovies">get Movies</button>
+          <pre>{{renderMovies.results}}</pre>
           <b-list-group>
             <b-list-group-item :to="{ name: 'Movie' }">Awesome link</b-list-group-item>
             <b-list-group-item href="#" active>Link with active state</b-list-group-item>
@@ -36,8 +37,11 @@ export default {
     Carousel
   },
   methods: {
-    data () {
-      Request.data()
+    getMovies () {
+      Request.getMovies()
+    },
+    renderMovies () {
+      Request.renderMovies()
     }
   }
 }
