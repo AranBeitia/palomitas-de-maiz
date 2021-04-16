@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/popular',
     name: 'Popular',
-    component: () => import(/* webpackChunkName: "popular" */ '@/ui/views/popular/Popular.vue')
+    component: () => import(/* webpackChunkName: "popular" */ '@/ui/views/popular/PopularPage.vue')
   },
   {
     path: '/search',
