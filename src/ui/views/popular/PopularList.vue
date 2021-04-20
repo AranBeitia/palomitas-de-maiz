@@ -1,8 +1,5 @@
 <template>
   <div>
-    <button @click="getMovies">get Movies</button>
-    <pre>{{moviess}}</pre>
-
     <b-list-group v-for="(movie, index) in movies" :key="index">
       <b-list-group-item :to="{ name: 'Movie' }">{{ movie.original_title }}</b-list-group-item>
     </b-list-group>
@@ -10,8 +7,8 @@
 </template>
 
 <script>
-import Request from '@/ui/views/home/homeRequest.js'
-
+/* import Request from '@/ui/views/home/homeRequest.js' */
+import { mapState, mapActions } from 'vuex'
 export default {
   props: {
     movies: {
@@ -19,16 +16,22 @@ export default {
       required: true
     }
   },
-  data () {
+/*   data () {
     return {
       moviess: []
     }
+  }, */
+  computed: {
+    ...mapState('Popular', ['moviesss'])
+  },
+  created () {
+    this.getMovies()
   },
   methods: {
-    getMovies () {
-      console.log(Request.getMovies().then(moviess => this.moviess = moviess))
+    ...mapActions('Popular',['getMovies'])
+/*     getMovies () {
       Request.getMovies().then(moviess => this.moviess = moviess)
-    }
+    } */
   }
 }
 </script>
