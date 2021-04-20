@@ -12,7 +12,7 @@ const actions = {
 }
 
 const mutations = {
-  setMoviesss(state, movies) {
+  setMovies(state, movies) {
     state.movies = movies
   }
 }
