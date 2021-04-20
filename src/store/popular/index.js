@@ -1,19 +1,19 @@
 import PopularMoviesRepository from '@/infra/movies/PopularMoviesRepository'
 
 const initialState = {
-  moviesss: []
+  movies: []
 }
 
 const actions = {
   async getMovies ({ commit }) {
-    const moviesss = await PopularMoviesRepository.getMovies()
-    commit('setMoviesss', moviesss)
+    const movies = await PopularMoviesRepository.getMovies()
+    commit('setMovies', movies)
   }
 }
 
 const mutations = {
-  setMoviesss(state, moviesss) {
-    state.moviesss = moviesss
+  setMoviesss(state, movies) {
+    state.movies = movies
   }
 }
 

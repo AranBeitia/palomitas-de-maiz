@@ -7,31 +7,13 @@
 </template>
 
 <script>
-/* import Request from '@/ui/views/home/homeRequest.js' */
-import { mapState, mapActions } from 'vuex'
+
 export default {
   props: {
     movies: {
       type: Object,
       required: true
     }
-  },
-/*   data () {
-    return {
-      moviess: []
-    }
-  }, */
-  computed: {
-    ...mapState('Popular', ['moviesss'])
-  },
-  created () {
-    this.getMovies()
-  },
-  methods: {
-    ...mapActions('Popular',['getMovies'])
-/*     getMovies () {
-      Request.getMovies().then(moviess => this.moviess = moviess)
-    } */
   }
 }
 </script>
