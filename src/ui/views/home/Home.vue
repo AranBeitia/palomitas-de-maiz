@@ -9,7 +9,7 @@
         </article>
         <article class="col-6">
           <h2>Mejor puntuadas</h2><!--  mejor puntuadas -->
-          <PopularFeed />
+          <RatedFeed />
         </article>
       </section>
     </b-container>
@@ -19,11 +19,13 @@
 <script>
 import Carousel from '@/ui/components/Carousel'
 import PopularFeed from '@/ui/views/popular/PopularFeed'
+import RatedFeed from '@/ui/views/rated/RatedFeed'
 
 export default {
   components: {
     Carousel,
-    PopularFeed
+    PopularFeed,
+    RatedFeed
   }
 }
 </script>

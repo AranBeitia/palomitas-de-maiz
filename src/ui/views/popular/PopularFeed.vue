@@ -1,10 +1,13 @@
 <template>
   <div>
 <!--     <pre>{{ movies.results }}</pre> -->
-    <b-list-group v-for="(movie, index) in movies.results" :key="index">
+    <b-list-group
+      v-for="(movie, index) in movies.results"
+      :key="index"
+    >
       <PopularMovie
-        :title="movie.original_title"
-        :image="movie.backdrop_path"
+        :title="movie.title"
+        :image="movie.poster_path"
       />
     </b-list-group>
   </div>
