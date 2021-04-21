@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Carousel /><!--  ultimos lanzamientos -->
+    <NowPlayingCarousel /><!--  ultimos lanzamientos -->
     <b-container>
       <section class="row">
         <article class="col-6">
@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import Carousel from '@/ui/components/Carousel'
+import NowPlayingCarousel from '@/ui/views/nowPlaying/NowPlayingCarousel'
 import PopularFeed from '@/ui/views/popular/PopularFeed'
 import RatedFeed from '@/ui/views/rated/RatedFeed'
 
 export default {
   components: {
-    Carousel,
+    NowPlayingCarousel,
     PopularFeed,
     RatedFeed
   }
