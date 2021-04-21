@@ -1,4 +1,4 @@
-const getMovies = async () => {
+const getPopularMovies = async () => {
   const API_URL = 'https://api.themoviedb.org/3/'
   const API_KEY = 'c6163ef75c8e34a1d6c622ff9958833e'
   const URL = `${API_URL}movie/popular?api_key=${API_KEY}&language=es-ES&page=1`
@@ -13,5 +13,5 @@ const getMovies = async () => {
 }
 
 export default {
-  getMovies
+  getPopularMovies
 }

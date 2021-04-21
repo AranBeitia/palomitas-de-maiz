@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Carousel />
+    <Carousel /><!--  ultimos lanzamientos -->
     <b-container>
       <section class="row">
         <article class="col-6">
-          <h2>Más populares</h2>
-          <PopularList />
+          <h2>Más populares</h2> <!-- populares -->
+          <PopularFeed />
         </article>
         <article class="col-6">
-          <h2>Mejor puntuadas</h2>
-          <PopularList />
+          <h2>Mejor puntuadas</h2><!--  mejor puntuadas -->
+          <PopularFeed />
         </article>
       </section>
     </b-container>
@@ -18,12 +18,12 @@
 
 <script>
 import Carousel from '@/ui/components/Carousel'
-import PopularList from '@/ui/views/popular/PopularList.vue'
+import PopularFeed from '@/ui/views/popular/PopularFeed'
 
 export default {
   components: {
     Carousel,
-    PopularList
+    PopularFeed
   }
 }
 </script>

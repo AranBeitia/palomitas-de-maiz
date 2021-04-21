@@ -1,12 +1,12 @@
-import PopularMoviesRepository from '@/infra/movies/PopularMoviesRepository'
+import PopularRepository from '@/infra/popular/PopularRepository'
 
 const initialState = {
   movies: []
 }
 
 const actions = {
-  async getMovies ({ commit }) {
-    const movies = await PopularMoviesRepository.getMovies()
+  async getPopularMovies ({ commit }) {
+    const movies = await PopularRepository.getPopularMovies()
     commit('setMovies', movies)
   }
 }
