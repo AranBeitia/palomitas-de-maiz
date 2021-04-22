@@ -1,7 +1,7 @@
+import env from '@/env-variables.js'
+
 const getPopularMovies = async () => {
-  const API_URL = 'https://api.themoviedb.org/3/movie'
-  const API_KEY = 'c6163ef75c8e34a1d6c622ff9958833e'
-  const URL = `${API_URL}/popular?api_key=${API_KEY}&language=es-ES&page=1`
+  const URL = `${env.config.API_TOKEN}/popular?api_key=${env.config.API_KEY}&language=es-ES&page=1`
   
   try {
     const response = await fetch(URL)
