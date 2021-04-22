@@ -7,7 +7,7 @@
       />
     </picture>
     <span>{{ title }}</span>
-    <button :to="{ name: 'Movie' }">Ver</button>
+    <b-button :to="{ name: 'Movie' }" variant="outline-primary">Ver</b-button>
   </b-list-group-item>
 </template>
 <script>

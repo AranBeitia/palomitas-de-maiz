@@ -2,9 +2,8 @@
   <div>
     <b-carousel
       v-model="slide"
-      :interval="4000"
+      :interval="8000"
       controls
-      indicators
       background="#ababab"
       img-width="100%"
       style="text-shadow: 1px 1px 2px #333;"
@@ -20,11 +19,6 @@
         ></b-carousel-slide>
       </div>
     </b-carousel>
-
-    <!-- <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p> -->
   </div>
 </template>
 
