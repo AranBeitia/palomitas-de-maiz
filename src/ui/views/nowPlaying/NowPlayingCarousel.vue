@@ -1,7 +1,6 @@
 <template>
   <div>
     <b-carousel
-      :id="nowPlaying"
       v-model="slide"
       :interval="4000"
       controls
