@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <router-link :to="{ name: 'Home' }" class="navbar-brand">
         <img src="@/ui/assets/img/logo.png" width="30" height="30" alt="peliculas">

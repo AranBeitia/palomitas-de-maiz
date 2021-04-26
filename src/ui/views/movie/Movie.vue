@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-detail">
+  <article class="movie-detail">
     <div class="movie-detail__inner pt-5">
       <b-container>
         <section class="row">
@@ -27,7 +27,7 @@
         </section>
       </b-container>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
