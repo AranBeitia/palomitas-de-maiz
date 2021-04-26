@@ -49,8 +49,19 @@ import { mapActions, mapState } from 'vuex'
   }
 </script>
 
-<style>
+<style lang="scss">
 .carousel-item {
   height: 50vh;
+}
+
+.carousel-caption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+  p {
+    margin: 0 4rem;
+  }
 }
 </style>

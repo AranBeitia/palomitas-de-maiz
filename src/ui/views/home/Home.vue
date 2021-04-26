@@ -1,16 +1,12 @@
 <template>
   <div>
-    <NowPlayingCarousel /><!--  ultimos lanzamientos -->
+    <NowPlayingCarousel />
     <b-container>
-      <section class="row">
-        <article class="col-6">
-          <h2>Más populares</h2> <!-- populares -->
-          <PopularFeed />
-        </article>
-        <article class="col-6">
-          <h2>Mejor puntuadas</h2><!--  mejor puntuadas -->
-          <RatedFeed />
-        </article>
+      <section class="my-5">
+        <RatedFeed :limit="ratedMovieSize"/>
+      </section>
+      <section class="my-5">
+        <PopularFeed />
       </section>
     </b-container>
   </div>
@@ -26,6 +22,11 @@ export default {
     NowPlayingCarousel,
     PopularFeed,
     RatedFeed
+  },
+  data () {
+    return {
+      ratedMovieSize: 5
+    }
   }
 }
 </script>

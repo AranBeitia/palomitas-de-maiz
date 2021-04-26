@@ -1,16 +1,18 @@
 <template>
-  <div>
+  <article>
+    <h2 class="popular__header">Popular</h2>
 <!--     <pre>{{ movies.results }}</pre> -->
-    <b-list-group
-      v-for="(movie, index) in movies.results"
-      :key="index"
-    >
-      <PopularMovie
-        :title="movie.title"
-        :image="movie.poster_path"
-      />
-    </b-list-group>
-  </div>
+    <div class="grid">
+      <b-list-group
+        v-for="(movie, index) in movies.results"
+        :key="index"
+      >
+        <PopularMovie
+          :image="movie.poster_path"
+        />
+      </b-list-group>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -32,3 +34,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.popular__header {
+  color: white;
+}
+</style>

@@ -1,16 +1,19 @@
 <template>
-  <div>
-<!--     <pre>{{ ratedMovies }}</pre> -->
+  <article class="grid">
+    <header class="rated__header">
+      <h1>Latest films</h1>
+      <h2>This week</h2>
+      <p>Update of the releases that are appearing on movie theaters</p>
+    </header>
     <b-list-group 
       v-for="(rated, index) in ratedMovies.results"
       :key="index"
     >
       <RatedMovie
-        :title="rated.title"
-        :image="rated.poster_path"
+        :image="rated.backdrop_path"
       />
     </b-list-group>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -21,14 +24,34 @@ export default {
   components: {
     RatedMovie
   },
+  props: {
+    limit: {
+      type: Number,
+      required: true
+    }
+  },
   computed: {
     ...mapState('rated', ['ratedMovies'])
   },
   created () {
-    this.getRatedMovies()
+    console.log(this.getRatedMovies())
+    this.getRatedMovies(this.limit)
   },
   methods: {
     ...mapActions('rated', ['getRatedMovies'])
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.rated__header {
+  color: white;
+}
+</style>

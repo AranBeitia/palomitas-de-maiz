@@ -1,23 +1,17 @@
 <template>
-  <b-list-group-item class="flex">
-    <picture class="image-cropper">
+  <router-link :to="{ name: 'Movie' }">
+    <b-list-group-item>
       <img 
-        :src="`https://image.tmdb.org/t/p/w500/${image}`"
+        :src="`https://image.tmdb.org/t/p/original/${image}`"
         class="image"
       />
-    </picture>
-    <span>{{ title }}</span>
-    <b-button :to="{ name: 'Movie' }" variant="outline-primary">Ver</b-button>
-  </b-list-group-item>
+    </b-list-group-item>
+  </router-link>
 </template>
 <script>
 
 export default {
   props: {
-    title: {
-      type: String,
-      required: true
-    },
     image: {
       type: String,
       required: true
@@ -27,19 +21,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.list-group-item {
+  padding: 0;
 }
-.image-cropper {
-  width: 70px;
-  height: 70px;
-  overflow: hidden;
-  border-radius: 50%;
-}
+
 .image {
-  width: 70px;
+  max-width: 200px;
   height: auto;
 }
 </style>
