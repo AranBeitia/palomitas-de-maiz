@@ -1,10 +1,9 @@
 <template>
   <article>
     <h2 class="popular__header">Popular</h2>
-<!--     <pre>{{ movies.results }}</pre> -->
     <div class="grid">
       <b-list-group
-        v-for="(movie, index) in movies.results"
+        v-for="(movie, index) in movies"
         :key="index"
       >
         <PopularMovie

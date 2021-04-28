@@ -1,15 +1,8 @@
-import env from '@/env-variables.js'
+import defaultRequest from '@/infra/request'
 
 const getRatedMovies = async () => {
-  const URL = `${env.config.API_TOKEN}/top_rated?api_key=${env.config.API_KEY}&language=es-ES&page=1`
-
-  try {
-    const response = await fetch(URL)
-    if(response.ok) {
-      const jsonResponse = await response.json()
-      return jsonResponse
-    }
-  } catch (error) { console.log(error) }
+ const jsonResponse = await defaultRequest.createRequest('top_rated')
+ return jsonResponse.results.slice(0, 5)
 }
 
 export default {

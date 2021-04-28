@@ -6,7 +6,7 @@
       <p>Update of the releases that are appearing on movie theaters</p>
     </header>
     <b-list-group 
-      v-for="(rated, index) in ratedMovies.results"
+      v-for="(rated, index) in ratedMovies"
       :key="index"
     >
       <RatedMovie
