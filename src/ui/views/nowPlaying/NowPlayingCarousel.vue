@@ -52,6 +52,10 @@ import { mapActions, mapState } from 'vuex'
 <style lang="scss">
 .carousel-item {
   height: 50vh;
+
+  @media all and (max-width: 900px) {
+    height: auto;
+  }
 }
 
 .carousel-caption {
@@ -61,7 +65,15 @@ import { mapActions, mapState } from 'vuex'
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 
   p {
-    margin: 0 4rem;
+    margin: 0 10rem;
+
+    @media all and (max-width: 900px) {
+      margin: 0 .5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   }
 }
 </style>

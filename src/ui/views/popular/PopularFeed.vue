@@ -41,8 +41,4 @@ export default {
   grid-template-rows: 1fr;
   gap: 1rem;
 }
-
-.popular__header {
-  color: white;
-}
 </style>

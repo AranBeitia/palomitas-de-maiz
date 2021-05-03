@@ -47,11 +47,29 @@ export default {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 1rem;
+
+  @media all and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+  }
 }
 
-.rated__header {
-  color: white;
-}
+  @media all and (max-width: 1000px) {
+
+    h1 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+  }
 </style>
