@@ -6,7 +6,7 @@ module.exports = {
       title: 'Palomitas de maiz'
     }
   },
-  css: {
+/*   css: {
     loaderOptions: {
       sass: {
         prependData: `
@@ -14,5 +14,5 @@ module.exports = {
         `
       }
     }
-  }
+  } */
 }
