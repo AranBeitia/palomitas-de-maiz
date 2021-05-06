@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-template-rows: 1fr;
   gap: 1rem;
 }

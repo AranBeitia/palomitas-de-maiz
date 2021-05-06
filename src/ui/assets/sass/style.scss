@@ -1,3 +1,13 @@
 @import 'base/base';
-@import 'base/variables';
 @import 'tokens/tokens';
+@import 'base/variables';
+//@import 'utils/utils.responsive';
+
+  [visible-only-mobile],
+  .visible-only-mobile {
+    display: none !important;
+
+    @media all and(max-width: 600px) {
+      display: flex !important;
+    }
+  }

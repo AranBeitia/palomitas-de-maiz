@@ -1,0 +1,62 @@
+/* Responsive Utilities: */
+
+$offsets: (
+  top: 't',
+  bottom: 'b',
+  right: 'r',
+  left: 'l',
+  all: 'a',
+);
+
+$properties: (
+  margin: 'm',
+  padding: 'p'
+);
+
+@mixin media($resolution) {
+  @media screen and (max-width: $resolution) {
+    @content;
+  }
+}
+
+@each $resolution-key, $resolution-value in $resolutions {
+  [hidden-in-#{$resolution-key}],
+  .hidden-in-#{$resolution-key} {
+    @include media($resolution-value) {
+      display: none !important;
+    }
+  }
+
+  [visible-only-#{$resolution-key}],
+  .visible-only-#{$resolution-key} {
+    display: none !important;
+
+    @include media($resolution-value) {
+      display: block !important;
+    }
+  }
+
+  [visible-only-#{$resolution-key}-flex],
+  .visible-only-#{$resolution-key}-flex {
+    display: none !important;
+
+    @include media($resolution-value) {
+      display: flex !important;
+    }
+  }
+  
+  @each $property, $p-value in $properties {
+    @each $item, $value in $offsets {
+      .q-#{$p-value}#{$value}-none-in-#{$resolution-key} {
+        @include media($resolution-value) {
+          #{$property}-#{$item}: 0;
+        }
+      }
+    }
+  }
+}
+
+// Example of use:
+// <p hidden-in-mobile>lorem ipsum</p>
+// <p class="hidden-in-mobile">lorem ipsum</p>
+// <p class="q-mb-none-in-tablet">lorem</p>

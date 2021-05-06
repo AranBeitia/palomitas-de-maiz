@@ -1,9 +1,7 @@
 <template>
-  <b-navbar variant="faded" type="dark" class="container-fluid">
-    <router-link :to="{ name: 'Home' }" class="navbar-brand">
-      <img src="@/ui/assets/img/logo.png" width="30" height="30" alt="peliculas">
-    </router-link>
-    <b-nav>
+  <footer class="container-fluid">
+    <p class="text-center"> © {{year}} Palomitas de maiz</p>
+    <b-nav visible-only-mobile>
       <b-nav-item>
         <router-link :to="{ name: 'Home' }" class="nav-link">home</router-link>
       </b-nav-item>
@@ -17,5 +15,18 @@
         <router-link :to="{ name: 'Search' }" class="nav-link">search</router-link>
       </b-nav-item>
     </b-nav>
-  </b-navbar>
+  </footer>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      year: new Date().getFullYear()
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>
