@@ -44,7 +44,7 @@ $properties: (
       display: flex !important;
     }
   }
-  
+
   @each $property, $p-value in $properties {
     @each $item, $value in $offsets {
       .q-#{$p-value}#{$value}-none-in-#{$resolution-key} {

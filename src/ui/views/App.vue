@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <TheTopNav id="nav"/>
+  <div>
+    <TheTopNav />
     <router-view />
     <TheBottomNav />
   </div>

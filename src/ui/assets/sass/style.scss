@@ -11,3 +11,12 @@
       display: flex !important;
     }
   }
+
+  [hidden-in-mobile],
+  .hidden-in-mobile {
+    display: flex !important;
+
+    @media all and(max-width: 600px) {
+      display: none !important;
+    }
+  }
