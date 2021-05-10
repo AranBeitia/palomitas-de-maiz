@@ -7,6 +7,7 @@
         :key="index"
       >
         <PopularMovie
+          v-if="index <= limit"
           :image="movie.poster_path"
         />
       </b-list-group>
@@ -21,6 +22,12 @@ import PopularMovie from '@/ui/views/popular/PopularMovie'
 export default {
   components: {
     PopularMovie
+  },
+  props: {
+    limit: {
+      type: Number,
+      required: true
+    }
   },
   computed: {
     ...mapState('popular', ['movies'])

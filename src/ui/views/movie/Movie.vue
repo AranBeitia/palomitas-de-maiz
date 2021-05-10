@@ -1,5 +1,6 @@
 <template>
   <article class="movie-detail">
+    <pre>{{ movieDetail }}</pre>
     <section class="movie-detail__hero">
       <b-button variant="outline-secondary">
         <font-awesome-icon icon="chevron-left"/>
@@ -64,11 +65,21 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 import Modal from '@/ui/components/Modal'
 
 export default {
   components: {
     Modal
+  },
+  computed: {
+    ...mapState('movie', ['movieDetail'])
+  },
+  created () {
+    this.getMovieDetail(102)
+  },
+  methods: {
+    ...mapActions('movie', ['getMovieDetail'])
   }
 }
 </script>
@@ -155,6 +166,10 @@ export default {
   &__info {
     list-style: none;
   }
+}
+
+pre {
+  color: white;
 }
 
 </style>

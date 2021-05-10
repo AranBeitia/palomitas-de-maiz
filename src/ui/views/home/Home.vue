@@ -3,10 +3,10 @@
     <NowPlayingCarousel />
     <b-container>
       <section class="my-5">
-        <RatedFeed :limit="ratedMovieSize"/>
+        <RatedFeed :limit="movieList"/>
       </section>
       <section class="my-5">
-        <PopularFeed />
+        <PopularFeed :limit="movieList" />
       </section>
     </b-container>
   </div>
@@ -25,7 +25,7 @@ export default {
   },
   data () {
     return {
-      ratedMovieSize: 5
+      movieList: 4
     }
   }
 }

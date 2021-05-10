@@ -10,6 +10,7 @@
       :key="index"
     >
       <RatedMovie
+        v-if="index <=limit"
         :image="rated.backdrop_path"
       />
     </b-list-group>
@@ -34,7 +35,6 @@ export default {
     ...mapState('rated', ['ratedMovies'])
   },
   created () {
-    console.log(this.getRatedMovies())
     this.getRatedMovies(this.limit)
   },
   methods: {
