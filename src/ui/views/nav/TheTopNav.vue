@@ -3,19 +3,11 @@
     <router-link :to="{ name: 'Home' }" class="navbar-brand">
       <img src="@/ui/assets/img/logo.png" width="30" height="30" alt="peliculas">
     </router-link>
-    <b-nav class="nav">
-      <b-nav-item>
-        <router-link :to="{ name: 'Home' }" class="nav-link">home</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link :to="{ name: 'NowPlaying' }" class="nav-link">latest</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link :to="{ name: 'Popular' }" class="nav-link">popular</router-link>
-      </b-nav-item>
-      <b-nav-item>
-        <router-link :to="{ name: 'Search' }" class="nav-link">search</router-link>
-      </b-nav-item>
+    <b-nav>
+      <b-nav-item :to="{ name: 'Home' }">home</b-nav-item>
+      <b-nav-item :to="{ name: 'NowPlaying' }">latest</b-nav-item>
+      <b-nav-item :to="{ name: 'Popular' }">popular</b-nav-item>
+      <b-nav-item :to="{ name: 'Search' }">search</b-nav-item>
     </b-nav>
   </b-navbar>
 </template>
