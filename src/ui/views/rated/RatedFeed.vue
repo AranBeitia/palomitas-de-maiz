@@ -5,14 +5,16 @@
       <h2>This week</h2>
       <p>Update of the releases that are appearing on movie theaters</p>
     </header>
-    <b-list-group 
+    <b-list-group
       v-for="(rated, index) in ratedMovies"
       :key="index"
     >
-      <RatedMovie
-        v-if="index <=limit"
-        :image="rated.backdrop_path"
-      />
+      <router-link :to="`/movie/${rated.id}`">
+        <RatedMovie
+          v-if="index <=limit"
+          :image="rated.backdrop_path"
+        />
+      </router-link>
     </b-list-group>
   </article>
 </template>

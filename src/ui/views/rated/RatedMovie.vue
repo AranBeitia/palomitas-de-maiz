@@ -1,12 +1,10 @@
 <template>
-  <router-link :to="{ name: 'Movie' }">
-    <b-list-group-item>
-      <img 
-        :src="`https://image.tmdb.org/t/p/original/${image}`"
-        class="image"
-      />
-    </b-list-group-item>
-  </router-link>
+  <b-list-group-item>
+    <img
+      :src="`https://image.tmdb.org/t/p/original/${image}`"
+      class="image"
+    />
+  </b-list-group-item>
 </template>
 <script>
 

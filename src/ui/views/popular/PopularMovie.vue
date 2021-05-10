@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{ name: 'Movie' }">
     <b-list-group-item>
-      <img 
+      <img
         :src="`https://image.tmdb.org/t/p/original/${image}`"
         class="image"
       />
