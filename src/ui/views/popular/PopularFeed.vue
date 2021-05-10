@@ -6,10 +6,12 @@
         v-for="(movie, index) in movies"
         :key="index"
       >
-        <PopularMovie
-          v-if="index <= limit"
-          :image="movie.poster_path"
-        />
+        <router-link :to="`/movie/${movie.id}`">
+          <PopularMovie
+            v-if="index <= limit"
+            :image="movie.poster_path"
+          />
+        </router-link>
       </b-list-group>
     </div>
   </article>
