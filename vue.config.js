@@ -6,13 +6,13 @@ module.exports = {
       title: 'Palomitas de maiz'
     }
   },
-/*   css: {
+  css: {
     loaderOptions: {
       sass: {
-        prependData: `
-          @import "@/ui/assets/sass/tokens/tokens.scss";
+        additionalData: `
+          @import "@/ui/assets/sass/abstracts/mixin.responsive.scss";
         `
       }
     }
-  } */
+  }
 }

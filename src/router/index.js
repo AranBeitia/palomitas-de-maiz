@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/now-playing',
     name: 'NowPlaying',
-    component: () => import(/* webpackChunkName: "now-playing" */ '@/ui/views/nowPlaying/NowPlaying.vue')
+    component: () => import(/* webpackChunkName: "now-playing" */ '@/ui/views/nowPlaying/NowPlayingPage.vue')
   },
   {
     path: '/popular',

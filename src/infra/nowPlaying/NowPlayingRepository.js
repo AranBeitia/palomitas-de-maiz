@@ -1,15 +1,8 @@
-import env from '@/env-variables.js'
+import defaultRequest from '@/infra/request'
 
 const getNowPlaying = async () => {
-  const URL = `${env.config.API_TOKEN}/now_playing?api_key=${env.config.API_KEY}&language=es-ES&page=1`
-  
-  try {
-    const response = await fetch(URL)
-    if(response.ok) {
-      const jsonResponse = await response.json()
-      return jsonResponse
-    }
-  } catch(error) { console.log(error) }
+  const jsonResponse = await defaultRequest.createRequest('now_playing')
+  return jsonResponse.results
 }
 
 export default {

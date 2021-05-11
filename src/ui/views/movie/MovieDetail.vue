@@ -162,9 +162,4 @@ export default {
     list-style: none;
   }
 }
-
-pre {
-  color: white;
-}
-
 </style>

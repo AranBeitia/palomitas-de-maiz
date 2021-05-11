@@ -1,5 +1,5 @@
 <template>
-  <article class="grid">
+  <article class="grid-3-to-2">
     <header class="rated__header">
       <h1>Latest films</h1>
       <h2>This week</h2>
@@ -46,20 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 1rem;
-
-  @media all and (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: .5rem;
-  }
-}
-
-  @media all and (max-width: 1000px) {
-
+  @include is-tablet {
     h1 {
       font-size: 18px;
       font-weight: bold;

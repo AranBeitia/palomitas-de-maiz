@@ -1,22 +1,8 @@
 @import 'base/base';
+
 @import 'tokens/tokens';
+@import 'abstracts/mixin.responsive';
+
 @import 'base/variables';
-//@import 'utils/utils.responsive';
-
-  [visible-only-mobile],
-  .visible-only-mobile {
-    display: none !important;
-
-    @media all and(max-width: 600px) {
-      display: flex !important;
-    }
-  }
-
-  [hidden-in-mobile],
-  .hidden-in-mobile {
-    display: flex !important;
-
-    @media all and(max-width: 600px) {
-      display: none !important;
-    }
-  }
+@import 'layout/grid';
+@import 'utils/utils.responsive';

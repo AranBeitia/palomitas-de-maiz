@@ -1,0 +1,33 @@
+%grid {
+  display: grid;
+  grid-gap: 2rem;
+
+  @include is-tablet {
+    grid-gap: 1rem;
+  }
+}
+
+// .grid-3-to-2 {
+//   @extend %grid;
+//   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+//   align-items: flex-start;
+// }
+
+.grid-3-to-2 {
+  @extend %grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+
+  @include is-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-5-to-3 {
+  @extend %grid;
+  grid-template-columns: repeat(5, 12rem);
+
+  @include is-tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

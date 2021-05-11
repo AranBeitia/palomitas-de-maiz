@@ -1,7 +1,7 @@
 <template>
-  <footer class="container-fluid">
+  <footer class="container-fluid" visible-only-mobile>
     <p class="text-center"> © {{year}} Palomitas de maiz</p>
-    <b-nav class="footer-menu" visible-only-mobile>
+    <b-nav class="footer-menu">
       <b-nav-item>
         <router-link :to="{ name: 'Home' }"><font-awesome-icon icon="home" class="home"/></router-link>
       </b-nav-item>

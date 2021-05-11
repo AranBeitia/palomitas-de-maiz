@@ -10,7 +10,7 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <div v-for="(playingMovie, index) in nowPlaying.results"
+      <div v-for="(playingMovie, index) in nowPlaying"
         :key="index">
         <b-carousel-slide
           :caption="playingMovie.title"
@@ -53,7 +53,7 @@ import { mapActions, mapState } from 'vuex'
 .carousel-item {
   height: 50vh;
 
-  @media all and (max-width: 900px) {
+  @include is-tablet {
     height: auto;
   }
 }
@@ -67,7 +67,7 @@ import { mapActions, mapState } from 'vuex'
   p {
     margin: 0 10rem;
 
-    @media all and (max-width: 900px) {
+    @include is-tablet {
       margin: 0 .5rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;

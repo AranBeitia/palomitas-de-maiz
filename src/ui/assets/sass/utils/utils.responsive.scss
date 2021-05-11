@@ -1,4 +1,9 @@
 /* Responsive Utilities: */
+$resolutions: (
+  mobile: $breakpoint-xs,
+  tablet: $breakpoint-sm,
+  desktop: $breakpoint-md
+);
 
 $offsets: (
   top: 't',
