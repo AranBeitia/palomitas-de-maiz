@@ -1,23 +1,24 @@
 <template>
   <b-container>
     <h1>Ultimos lanzamientos</h1>
-    <!-- <pre>{{nowPlaying}}</pre> -->
     <article class="grid-5-to-3">
       <section
         v-for="(latest, index) in nowPlaying"
         :key="index"
       >
-        <b-card
-          overlay
-          :img-src="`https://image.tmdb.org/t/p/original/${latest.poster_path}`"
-          :img-alt="latest.title"
-          text-variant="white"
-        >
-        </b-card>
-        <b-card-text>
-          <h1>{{ latest.title }}</h1>
-          <span>{{ latest.release_date }}</span>
-        </b-card-text>
+        <router-link :to="`/movie/${latest.id}`">
+          <b-card
+            overlay
+            :img-src="`https://image.tmdb.org/t/p/original/${latest.poster_path}`"
+            :img-alt="latest.title"
+            text-variant="white"
+          >
+          </b-card>
+          <b-card-text>
+            <h1>{{ latest.title }}</h1>
+            <span>{{ latest.release_date }}</span>
+          </b-card-text>
+        </router-link>
       </section>
     </article>
     <Pagination />
