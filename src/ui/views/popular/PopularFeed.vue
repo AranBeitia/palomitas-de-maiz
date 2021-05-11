@@ -1,8 +1,8 @@
 <template>
   <article>
     <h2 class="popular__header">Popular</h2>
-    <div class="grid">
-      <b-list-group
+    <section class="grid-5-to-3">
+      <div
         v-for="(movie, index) in movies"
         :key="index"
       >
@@ -12,8 +12,8 @@
             :image="movie.poster_path"
           />
         </router-link>
-      </b-list-group>
-    </div>
+      </div>
+    </section>
   </article>
 </template>
 
@@ -44,10 +44,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-rows: 1fr;
-  gap: 1rem;
-}
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+//   grid-template-rows: 1fr;
+//   gap: 1rem;
+// }
 </style>
