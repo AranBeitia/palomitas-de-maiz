@@ -11,7 +11,6 @@
     >
       <router-link :to="`/movie/${rated.id}`">
         <RatedMovie
-          v-if="index <=limit"
           :image="rated.backdrop_path"
         />
       </router-link>

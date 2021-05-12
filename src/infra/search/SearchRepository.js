@@ -1,9 +1,8 @@
 import defaultRequest from '@/infra/request'
 
-const getSearchMovie = async () => {
-  console.log('buscando peli...')
-  const jsonResponse = await defaultRequest.createRequest('')
-  return jsonResponse
+const getSearchMovie = async (query) => {
+  const jsonResponse = await defaultRequest.createSearchRequest(query)
+  return jsonResponse.results
 }
 
 export default {

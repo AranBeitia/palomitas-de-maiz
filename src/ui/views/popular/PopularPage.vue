@@ -37,7 +37,7 @@ export default {
     ...mapState('popular', ['movies'])
   },
   created () {
-    this.getPopularMovies()
+    this.getPopularMovies(8)
   },
   methods: {
     ...mapActions('popular', ['getPopularMovies'])

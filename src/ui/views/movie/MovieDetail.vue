@@ -10,15 +10,15 @@
     <b-container class="position-relative">
       <header class="movie-detail__header d-flex justify-content-between">
         <div>
-          <span>{{ movieDetail.release_date }}</span>
+          <span>{{ movieDetail.release_date.substring(0, 4) }}</span>
           <h1>{{ movieDetail.title }}</h1>
         </div>
         <Modal />
       </header>
       <ul class="movie-detail__category-list d-flex justify-content-sm-start">
-        <li><b-badge>{{ movieDetail.genres[0].name }}</b-badge></li>
-        <li><b-badge>{{ movieDetail.genres[1].name }}</b-badge></li>
-        <!-- <li><b-badge>{{ movieDetail.genres[2].name }}</b-badge></li> -->
+        <li v-for="(genre, index) in movieDetail.genres" :key="index">
+          <b-badge>{{ genre.name }}</b-badge>
+        </li>
       </ul>
       <section class="movie-detail__ranking d-flex justify-content-between align-items-md-baseline pb-4">
         <div class="d-flex align-items-md-baseline">
@@ -160,6 +160,9 @@ export default {
 
   &__info {
     list-style: none;
+  }
+  pre {
+    color: white;
   }
 }
 </style>

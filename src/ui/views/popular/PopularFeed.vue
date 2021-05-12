@@ -8,7 +8,6 @@
       >
         <router-link :to="`/movie/${movie.id}`">
           <PopularMovie
-            v-if="index <= limit"
             :image="movie.poster_path"
           />
         </router-link>
@@ -35,7 +34,7 @@ export default {
     ...mapState('popular', ['movies'])
   },
   created () {
-    this.getPopularMovies()
+    this.getPopularMovies(this.limit)
   },
   methods: {
     ...mapActions('popular',['getPopularMovies'])

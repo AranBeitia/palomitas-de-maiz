@@ -5,8 +5,8 @@ const initialState = {
 }
 
 const actions = {
-  async getPopularMovies ({ commit }) {
-    const movies = await PopularRepository.getPopularMovies()
+  async getPopularMovies ({ commit }, limit) {
+    const movies = await PopularRepository.getPopularMovies(limit)
     commit('setMovies', movies)
   }
 }

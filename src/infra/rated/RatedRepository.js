@@ -1,8 +1,8 @@
 import defaultRequest from '@/infra/request'
 
-const getRatedMovies = async () => {
+const getRatedMovies = async (limit) => {
  const jsonResponse = await defaultRequest.createRequest('top_rated')
- return jsonResponse.results
+ return jsonResponse.results.slice(0, limit)
 }
 
 export default {

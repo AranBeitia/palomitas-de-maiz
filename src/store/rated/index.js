@@ -5,8 +5,8 @@ const initialState = {
 }
 
 const actions = {
-  async getRatedMovies ({ commit }) {
-    const rated = await RatedRepository.getRatedMovies()
+  async getRatedMovies ({ commit }, limit) {
+    const rated = await RatedRepository.getRatedMovies(limit)
     commit('setRatedMovies', rated)
   }
 }
@@ -20,6 +20,6 @@ const mutations = {
 export default {
   namespaced: true,
   state: initialState,
-  actions, 
+  actions,
   mutations
 }

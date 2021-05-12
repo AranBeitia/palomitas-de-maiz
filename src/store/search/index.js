@@ -5,8 +5,8 @@ const initialState = {
 }
 
 const actions = {
-  async getSearchMovie ({ commit }) {
-    const searchMovie = await SearchRepository.getSearchMovie()
+  async getSearchMovie ({ commit }, query) {
+    const searchMovie = await SearchRepository.getSearchMovie(query)
     commit('setSearchMovie', searchMovie)
   }
 }
