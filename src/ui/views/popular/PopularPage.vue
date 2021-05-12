@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h1>Populares</h1>
+    <h1 class="text-center mb-5">Populares</h1>
     <article class="grid-5-to-3">
       <section
         v-for="(movie, index) in movies"

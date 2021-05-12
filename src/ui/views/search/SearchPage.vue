@@ -2,19 +2,54 @@
   <div class="container mt-5">
     <h1 class="text-center mb-5">Buscador de películas</h1>
     <form action="" class="search-form">
-      <b-form-input type="search" class="search-input" placeholder="Busca una película"></b-form-input>
+      <b-form-input type="search" class="search-input" placeholder="Busca una película" @keyup="hello"></b-form-input>
       <font-awesome-icon icon="search" class="search-icon"/>
     </form>
     <div class="row list-cards"></div>
   </div>
 </template>
 
+<script>
+import { mapActions, mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState('search', ['searchMovie'])
+  },
+  created () {
+    this.getSearchMovie()
+  },
+  methods: {
+    ...mapActions('search', ['getSearchMovie']),
+    hello () {
+      return console.log('hello kitty')
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
+  @include is-tablet {
+    h1 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+  }
+
 .search {
   &-form {
     position: relative;
     margin: auto;
-    transition: all 1s;
+    transition: all .5s;
     width: 50px;
     height: 50px;
     background: white;
@@ -24,7 +59,7 @@
     padding: 5px;
 
     &:hover{
-      width: 200px;
+      width: 300px;
       cursor: pointer;
     }
 
@@ -48,10 +83,9 @@
     outline: 0;
     border: 0;
     display: none;
-    font-size: 1em;
+    font-size: 1rem;
     border-radius: 20px;
     padding: 0 20px;
-    outline: 1px solid red;
   }
 
   &-icon {

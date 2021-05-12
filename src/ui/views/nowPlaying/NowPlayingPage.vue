@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h1>Ultimos lanzamientos</h1>
+    <h1 class="text-center mb-5">Ultimos lanzamientos</h1>
     <article class="grid-5-to-3">
       <section
         v-for="(latest, index) in nowPlaying"
