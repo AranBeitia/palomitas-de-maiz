@@ -1,0 +1,13 @@
+h1, h2 {
+  margin-top: 0;
+  margin-bottom: 1rem; // Vertical Rhythm
+  letter-spacing: -.2rem;
+}
+
+h1 {
+  @extend .text-heading-main;
+}
+
+h2 {
+  @extend .text-heading-secondary;
+}

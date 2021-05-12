@@ -1,8 +1,13 @@
-@import 'base/base';
-
+@import 'base/variables';
+@import 'bootstrap/bootstrap';
 @import 'tokens/tokens';
+
 @import 'abstracts/mixin.responsive';
 
-@import 'base/variables';
+@import 'base/default';
+@import 'base/typography';
+@import 'base/headings';
+
 @import 'layout/grid';
+
 @import 'utils/utils.responsive';

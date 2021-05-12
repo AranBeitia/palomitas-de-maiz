@@ -1,4 +1,15 @@
 :root {
   --dark: #000000;
   --secondary: #ffffff;
+
+    // FONTS
+    --font-size-base: 1.6rem;
+    --font-size-base-mobile: 1.4rem;
+    --font-color-base: var(--dark);
+
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    //  MAIN WIDTH
+    --width-desktop: 90%;
 }

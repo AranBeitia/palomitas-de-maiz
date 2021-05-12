@@ -1,9 +1,9 @@
 <template>
   <article class="grid-3-to-2">
     <header class="rated__header">
-      <h1>Latest films</h1>
-      <h2>This week</h2>
-      <p>Update of the releases that are appearing on movie theaters</p>
+      <h1>Top movies</h1>
+      <h2>Rated by users</h2>
+      <p>Movies with 40 or more critic reviews. Eligible movies are ranked based on their Adjusted Scores.</p>
     </header>
     <b-list-group
       v-for="(rated, index) in ratedMovies"

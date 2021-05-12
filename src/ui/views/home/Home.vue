@@ -25,7 +25,7 @@ export default {
   },
   data () {
     return {
-      movieList: 4
+      movieList: 5
     }
   }
 }
