@@ -2,29 +2,34 @@
   <b-container class="mt-5">
     <h1 class="text-center mb-5">Buscador de películas</h1>
     <form action="" class="search-form">
-      <b-form-input type="search" v-model="textSearch" class="search-input" placeholder="Busca una película" @keyup="hello"></b-form-input>
+      <b-form-input
+        type="search"
+        v-model="textSearch"
+        class="search-input"
+        placeholder="Busca una película"
+        @keyup="search"
+      ></b-form-input>
       <font-awesome-icon icon="search" class="search-icon"/>
     </form>
 
     <article class="grid-5-to-3">
-      <section
+      <router-link
         v-for="(movie, index) in searchMovie"
         :key="index"
+        :to="`/movie/${movie.id}`"
       >
-        <router-link :to="`/movie/${movie.id}`">
-          <b-card
-            overlay
-            :img-src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
-            :img-alt="movie.title"
-            text-variant="white"
-          >
-          </b-card>
-          <b-card-text>
-            <h1>{{ movie.title }}</h1>
-            <span>{{ movie.release_date }}</span>
-          </b-card-text>
-        </router-link>
-      </section>
+        <b-card
+          overlay
+          :img-src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
+          :img-alt="movie.title"
+          text-variant="white"
+        >
+        </b-card>
+        <b-card-text class="list-text">
+          <p class="text-body-main-bold">{{ movie.title }}</p>
+          <span>{{ movie.release_date }}</span>
+        </b-card-text>
+      </router-link>
     </article>
   </b-container>
 </template>
@@ -41,12 +46,9 @@ export default {
   computed: {
     ...mapState('search', ['searchMovie'])
   },
-  // created () {
-  //   this.getSearchMovie(this.textSearch)
-  // },
   methods: {
     ...mapActions('search', ['getSearchMovie']),
-    hello () {
+    search () {
       if (this.textSearch.length < 3) return
       this.textSearch
       this.getSearchMovie(this.textSearch)
@@ -56,21 +58,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @include is-tablet {
-    h1 {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    h2 {
-      font-size: 18px;
-    }
-
-    p {
-      font-size: 12px;
-      margin-bottom: 0;
-    }
-  }
+.list-text {
+  color: var(--white);
+}
 
 .search {
   &-form {

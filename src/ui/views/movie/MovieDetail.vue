@@ -1,27 +1,24 @@
 <template>
-  <article class="movie-detail">
-    <!-- <pre>{{ movieDetail }}</pre> -->
+  <article class="movie-detail position-relative">
     <section class="movie-detail__hero" :style="`background-image: url(https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`">
-      <b-button variant="outline-secondary">
+      <b-button variant="outline-secondary" @click="backBehaviour">
         <font-awesome-icon icon="chevron-left"/>
         <span class="pl-3">Back</span>
       </b-button>
     </section>
-    <b-container class="position-relative">
-      <header class="movie-detail__header d-flex justify-content-between">
-        <div>
-          <span>{{ movieDetail.release_date.substring(0, 4) }}</span>
+    <b-container class="position-absolute">
+      <header class="movie-detail__header">
+          <!-- <span>{{ movieDetail.release_date.substring(0, 4) }}</span> -->
           <h1>{{ movieDetail.title }}</h1>
-        </div>
         <Modal />
       </header>
-      <ul class="movie-detail__category-list d-flex justify-content-sm-start">
+      <ul class="movie-detail__category-list d-flex justify-content-start">
         <li v-for="(genre, index) in movieDetail.genres" :key="index">
           <b-badge>{{ genre.name }}</b-badge>
         </li>
       </ul>
       <section class="movie-detail__ranking d-flex justify-content-between align-items-md-baseline pb-4">
-        <div class="d-flex align-items-md-baseline">
+        <div class="d-flex align-items-baseline">
           <ul class="movie-detail__category-list d-flex">
             <li><font-awesome-icon icon="star" class="star --actived"/></li>
             <li><font-awesome-icon icon="star" class="star --actived"/></li>
@@ -29,11 +26,11 @@
             <li><font-awesome-icon icon="star" class="star"/></li>
             <li><font-awesome-icon icon="star" class="star"/></li>
           </ul>
-          <span class="number">{{ movieDetail.vote_average }}</span>
+          <span class="number text-heading-main">{{ movieDetail.vote_average }}</span>
         </div>
-        <div class="d-flex align-items-md-baseline">
-          <span class="text-uppercase">metascore</span>
-          <span class="number">{{ movieDetail.vote_count}}</span>
+        <div class="d-flex align-items-baseline">
+          <span class="text-tag text-uppercase">metascore</span>
+          <span class="number text-heading-main">{{ movieDetail.vote_count}}</span>
         </div>
       </section>
       <section class="row">
@@ -67,27 +64,40 @@ export default {
   components: {
     Modal
   },
-  computed: {
-    ...mapState('movie', ['movieDetail'])
-  },
   created () {
     this.getMovieDetail(this.$route.params.id)
   },
+  computed: {
+    ...mapState('movie', ['movieDetail'])
+  },
   methods: {
-    ...mapActions('movie', ['getMovieDetail'])
+    ...mapActions('movie', ['getMovieDetail']),
+    backBehaviour () {
+      console.log('hi')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.position-absolute {
+  position: absolute;
+  top: 40vh;
+  left: 50%;
+  transform: translate(-50%);
+}
 .number {
-  font-size: 4rem;
+  margin-left: .5rem;
   color: yellow;
   font-style: italic;
 }
 
 .star {
   font-size: 1.5rem;
+
+  @include is-mobile {
+    font-size: 1rem;
+  }
 
   &.--actived {
     color: yellow;
@@ -100,13 +110,10 @@ export default {
 }
 
 .movie-detail {
-  padding-bottom: 125px;
-
   &__hero {
     position: relative;
     padding-top: 25px;
     background-position: center center;
-    // background-image: url("https://image.tmdb.org/t/p/original/nlCHUWjY9XWbuEUQauCBgnY8ymF.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-color: #464646;
@@ -123,8 +130,10 @@ export default {
   }
 
   &__header {
-    position: absolute;
-    top: -85px;
+    display: flex;
+    justify-content: space-between;
+    // position: absolute;
+    // top: -85px;
   }
 
   &__category-list {
@@ -138,6 +147,10 @@ export default {
 
       &:not(:last-child){
         padding-right: 1rem;
+
+        @include is-mobile {
+          padding-right: .3rem;
+        }
       }
 
       .badge {
@@ -156,13 +169,14 @@ export default {
   &__image {
     max-width: 200px;
     width: auto;
+
+    @include is-mobile {
+      max-width: 100px;
+    }
   }
 
   &__info {
     list-style: none;
-  }
-  pre {
-    color: white;
   }
 }
 </style>
