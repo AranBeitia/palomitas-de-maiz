@@ -15,7 +15,7 @@
         >
         </b-card>
         <b-card-text class="list-text">
-          <h2>{{ movie.title }}</h2>
+          <p class="text-body-main-bold trunkate">{{ movie.title }}</p>
           <span>{{ movie.release_date }}</span>
         </b-card-text>
       </router-link>
@@ -47,5 +47,13 @@ export default {
 <style lang="scss" scoped>
 .list-text {
   color: var(--white);
+}
+
+.trunkate {
+  outline: 1px solid red;
+ display: box;
+ -webkit-line-clamp: 1;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
 }
 </style>

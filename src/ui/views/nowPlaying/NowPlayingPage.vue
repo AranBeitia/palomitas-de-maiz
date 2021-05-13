@@ -2,24 +2,23 @@
   <b-container>
     <h1 class="text-center mb-5">Ultimos lanzamientos</h1>
     <article class="grid-5-to-3">
-      <section
+      <router-link
         v-for="(latest, index) in nowPlaying"
         :key="index"
+        :to="`/movie/${latest.id}`"
       >
-        <router-link :to="`/movie/${latest.id}`">
-          <b-card
-            overlay
-            :img-src="`https://image.tmdb.org/t/p/original/${latest.poster_path}`"
-            :img-alt="latest.title"
-            text-variant="white"
-          >
-          </b-card>
-          <b-card-text>
-            <h1>{{ latest.title }}</h1>
-            <span>{{ latest.release_date }}</span>
-          </b-card-text>
-        </router-link>
-      </section>
+        <b-card
+          overlay
+          :img-src="`https://image.tmdb.org/t/p/original/${latest.poster_path}`"
+          :img-alt="latest.title"
+          text-variant="white"
+        >
+        </b-card>
+        <b-card-text class="list-text">
+          <p class="text-body-main-bold">{{ latest.title }}</p>
+          <span>{{ latest.release_date }}</span>
+        </b-card-text>
+      </router-link>
     </article>
     <Pagination />
   </b-container>
@@ -46,19 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @include is-tablet {
-    h1 {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    h2 {
-      font-size: 18px;
-    }
-
-    p {
-      font-size: 12px;
-      margin-bottom: 0;
-    }
-  }
+.list-text {
+  color: var(--white);
+}
 </style>
