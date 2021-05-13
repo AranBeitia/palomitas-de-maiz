@@ -25,7 +25,7 @@
 
 .grid-5-to-3 {
   @extend %grid;
-  grid-template-columns: repeat(5, 12rem);
+  grid-template-columns: repeat(5, 1fr);
 
   @include is-tablet {
     grid-template-columns: repeat(3, 1fr);

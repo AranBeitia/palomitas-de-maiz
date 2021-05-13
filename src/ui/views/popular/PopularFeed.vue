@@ -41,12 +41,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-// .grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-//   grid-template-rows: 1fr;
-//   gap: 1rem;
-// }
-</style>
