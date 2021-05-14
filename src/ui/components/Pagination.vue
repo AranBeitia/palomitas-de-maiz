@@ -1,13 +1,19 @@
 <template>
-  <b-pagination v-model="currentPage" :total-rows="rows" align="center"></b-pagination>
+  <div class="overflow-auto">
+    <b-pagination-nav
+      :link-gen="linkGen"
+      :number-of-pages="10"
+      use-router
+      align="center"
+    ></b-pagination-nav>
+  </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      rows: 100,
-      currentPage: 3
+  methods: {
+    linkGen (pageNum) {
+      return pageNum === 1 ? '?' : `?page=${pageNum}`
     }
   }
 }
