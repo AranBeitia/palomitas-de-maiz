@@ -4,17 +4,16 @@
       :link-gen="linkGen"
       :number-of-pages="10"
       use-router
-      align="center"
     ></b-pagination-nav>
   </div>
 </template>
 
 <script>
-export default {
-  methods: {
-    linkGen (pageNum) {
-      return pageNum === 1 ? '?' : `?page=${pageNum}`
+  export default {
+    methods: {
+      linkGen(pageNum) {
+        return pageNum === 1 ? '?' : `?page=${pageNum}`
+      }
     }
   }
-}
 </script>

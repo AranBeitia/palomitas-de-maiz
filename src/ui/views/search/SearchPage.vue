@@ -19,8 +19,17 @@
         :to="`/movie/${movie.id}`"
       >
         <b-card
+          v-if="movie.poster_path"
           overlay
           :img-src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`"
+          :img-alt="movie.title"
+          text-variant="white"
+        >
+        </b-card>
+        <b-card
+          v-else
+          overlay
+          img-src="https://upload.wikimedia.org/wikipedia/commons/0/0a/No-image-available.png"
           :img-alt="movie.title"
           text-variant="white"
         >
