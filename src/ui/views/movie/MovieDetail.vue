@@ -4,24 +4,26 @@
         <font-awesome-icon icon="chevron-left"/>
         <span class="pl-3">Back</span>
       </b-button> -->
-    <section class="movie-detail__hero" :style="`background-image: url(https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`">
+    <section v-if="movieDetail.backdrop_path" class="movie-detail__hero" :style="`background-image: url(https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`">
       <b-button variant="outline-secondary" @click="backBehaviour" class="back">
         <font-awesome-icon icon="chevron-left"/>
         <span class="pl-3">Back</span>
       </b-button>
     </section>
-    <b-container class="position-absolute">
-      <header class="movie-detail__header">
-          <!-- <span>{{ movieDetail.release_date.substring(0, 4) }}</span> -->
+    <b-container class="position-absolute pb-5">
+      <header>
+        <span class="text-body-secondary-bold">{{ movieDetail.release_date.substring(0, 4) }}</span>
+        <div class="d-flex justify-content-between">
           <h1>{{ movieDetail.title }}</h1>
-        <Modal />
+          <Modal />
+        </div>
       </header>
       <ul class="movie-detail__category-list d-flex justify-content-start">
         <li v-for="(genre, index) in movieDetail.genres" :key="index">
           <b-badge>{{ genre.name }}</b-badge>
         </li>
       </ul>
-      <section class="movie-detail__ranking d-flex justify-content-between align-items-md-baseline pb-4">
+      <section class="d-flex justify-content-between align-items-md-baseline pb-4">
         <div class="d-flex align-items-baseline">
           <ul class="movie-detail__category-list d-flex">
             <li><font-awesome-icon icon="star" class="star --actived"/></li>
@@ -44,14 +46,14 @@
             :alt="movieDetail.title"
             class="movie-detail__image"
           />
-          <ul class="movie-detail__info">
+          <ul class="ml-4">
             <li><span class="title">title: </span>{{ movieDetail.title }}</li>
             <li><span class="title">release date: </span>{{ movieDetail.release_date }}</li>
             <li><span class="title">original title: </span>{{ movieDetail.original_title }}</li>
             <li><span class="title">original language: </span>{{ movieDetail.original_language }}</li>
           </ul>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 storyline">
           <h2>Storyline</h2>
           <p>{{ movieDetail.overview }}</p>
         </div>
@@ -146,13 +148,6 @@ export default {
     }
   }
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    // position: absolute;
-    // top: -85px;
-  }
-
   &__category-list {
     list-style: none;
     padding-inline-start: 0;
@@ -179,21 +174,19 @@ export default {
     }
   }
 
-  &__ranking {
-    
-  }
-
   &__image {
-    max-width: 200px;
+    max-width: 180px;
     width: auto;
 
     @include is-mobile {
       max-width: 100px;
     }
   }
+}
 
-  &__info {
-    list-style: none;
+.storyline {
+  @include is-tablet {
+    margin-top: 3rem;
   }
 }
 </style>
