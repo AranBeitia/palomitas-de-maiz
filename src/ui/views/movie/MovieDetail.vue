@@ -1,7 +1,11 @@
 <template>
   <article class="movie-detail position-relative">
+      <!-- <b-button variant="outline-secondary" @click="backBehaviour">
+        <font-awesome-icon icon="chevron-left"/>
+        <span class="pl-3">Back</span>
+      </b-button> -->
     <section class="movie-detail__hero" :style="`background-image: url(https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`">
-      <b-button variant="outline-secondary" @click="backBehaviour">
+      <b-button variant="outline-secondary" @click="backBehaviour" class="back">
         <font-awesome-icon icon="chevron-left"/>
         <span class="pl-3">Back</span>
       </b-button>
@@ -73,13 +77,26 @@ export default {
   methods: {
     ...mapActions('movie', ['getMovieDetail']),
     backBehaviour () {
-      console.log('hi')
+      this.$router.go(-1)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.back {
+  position: absolute;
+  left: 2rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--white);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, .4);
+  }
+}
+
 .position-absolute {
   position: absolute;
   top: 40vh;
