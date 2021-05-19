@@ -1,9 +1,5 @@
 <template>
   <article class="movie-detail position-relative">
-      <!-- <b-button variant="outline-secondary" @click="backBehaviour">
-        <font-awesome-icon icon="chevron-left"/>
-        <span class="pl-3">Back</span>
-      </b-button> -->
     <section v-if="movieDetail.backdrop_path" class="movie-detail__hero" :style="`background-image: url(https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path})`">
       <b-button variant="outline-secondary" @click="backBehaviour" class="back">
         <font-awesome-icon icon="chevron-left"/>

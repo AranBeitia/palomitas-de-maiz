@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="py-5">
     <h2 class="popular__header">Popular</h2>
     <section class="grid-5-to-3">
       <div
