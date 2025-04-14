@@ -1,5 +1,8 @@
 # palomitas-de-maiz
 
+## Demo
+[Palomitas de Maíz](https://palomitas-de-maiz.netlify.app/)
+
 ## Project setup
 ```
 npm install
